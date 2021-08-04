@@ -1,0 +1,101 @@
+<html>
+<!--if you need to look up a reference: explore https://www.w3schools.com/html/default.asp -->
+<head>
+	<title>Title as appears on Browser</title>
+	
+	<style type=text/css>
+	
+		body{
+			background-color: #ffffcc;
+			text-align: center;
+		}
+		h2{
+			margin:20px;
+		}
+		p{
+			margin:30px;
+		}
+		a{
+			margin:30px;
+		}
+		div.allthings{
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+		}
+		div.header{
+			background-color: #80ffff;
+			width: 80%;
+			margin:20px;
+		}
+		div.content{
+			background-color: #9fff80;
+			width: 50%;
+			margin:20px;
+		}
+	
+	</style>
+	
+</head>
+	
+<body>
+
+	<!--this div box contains all things on the page. It's useful to keep everything in a box so that you can format it easily-->
+	<div class="allthings">
+	
+		<!--This begins the different boxes you can have. The first box has a different style than the rest-->
+		<div id="title" class="header"><!--to modify the style, look at div.header in the style section-->
+			<h1>Hello World</h1>
+			<h3>Go To...</h2>
+			<!--these are links. You can set the destination to other sites or other parts of your page. If you want to 
+				go to a different part of the page, then you have to give that part an id such as "item1"-->
+			<a href="https://isitchristmas.com/">Is it Christmas?</a>
+			<a href="#item1">Menu</a>
+			<a href="#item2">Drinks</a>
+			<a href="#item3">Item 3</a>
+		</div>
+		<div id="item1" class="content"> <!--to modify the style, look at div.content in the style section-->
+			<h2>Menu</h2>
+			<p>begin filling in what you want here</p>
+		</div>
+		<div id="item2" class="content">
+			<h2>Drinks</h2>
+			<p>You don't need to keep all the different backgrounds, but it's good to see where the boxes start and stop while you develop your site</p>
+		</div>
+		<div id="item3" class="content">
+			<h2>Item 3</h2>
+			<p>You don't need to keep all the different backgrounds, but it's good to see where the boxes start and stop while you develop your site</p>
+		</div>
+		<a href="#title">Back to top</a>
+	
+	</div>
+	<!--id is used to specify a single element. Only this div will have this id "tim"-->
+	<!--<div id="tim"></div>--><!--this div is empty on purpose. The javascript code is going to put something here-->
+</body>
+
+<script><!--Javascript code: Code here acts after creating the page-->
+
+	//java code has a different comment notation
+	
+	//generate a random number in the range 0-150
+	var randomNumber = Math.floor(Math.random() * 151);
+	
+	//use random number and make sure it is in the range of the decimal id of the emojis
+	//currently picked the numbers for animals and smiley faces
+	if( randomNumber > 81 ){
+		randomNumber = randomNumber+128512-81;
+	}
+	else{
+		randomNumber = randomNumber+128000;
+	}
+		
+	//put the emoji id number into the format the html page will accept (&#000000)
+	var thisEmoji = "&#"+randomNumber.toString();
+	
+	//insert into div named tim
+	document.getElementById("tim").innerHTML = ( thisEmoji );
+	
+</script>
+
+</html>
