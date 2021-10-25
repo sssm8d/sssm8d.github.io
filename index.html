@@ -1,22 +1,24 @@
 <html>
 <!--if you need to look up a reference: explore https://www.w3schools.com/html/default.asp -->
 <head>
-	<title>Title as appears on Browser</title>
-	
+	<title>Sarah Skinner</title>
+	<link rel="icon" href="MeLogo3-purple-circle2.png">
 	<style type=text/css>
 	
 		body{
-			background-color: #ffffcc;
+			background-color: grey;
 			text-align: center;
-		}
-		h2{
-			margin:20px;
+			color: white;
+			background-image: url('bg12.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+			background-attachment: fixed;
+			text-shadow: 1px 1px black;
 		}
 		p{
 			margin:30px;
-		}
-		a{
-			margin:30px;
+			margin-top:0px;
 		}
 		div.allthings{
 			display: flex;
@@ -25,14 +27,43 @@
 			justify-content: center;
 		}
 		div.header{
-			background-color: #80ffff;
+			background-color: rgba(0, 0, 0, 0.001);
 			width: 80%;
 			margin:20px;
 		}
-		div.content{
-			background-color: #9fff80;
-			width: 50%;
+		div.header2{
+			background-color: rgba(0, 0, 0, 0.5);
+			width: 75%;
 			margin:20px;
+			margin-bottom:0px;
+		}
+		div.content{
+			background-color: rgba(0, 0, 0, 0.5);
+			display: flex;
+			flex-direction:column;
+			width: 25%;
+			margin: 20px;
+			min-width: 300px;
+			height: 300px;
+			justify-content: center;
+			align-items:center;
+		}
+		div.contentbox{
+		    display:flex;
+			flex-direction:row;
+			flex-wrap:wrap;
+			align-items: center;
+			justify-content: center;
+		}
+		img.melogo{
+			width: 200%;
+			max-width: 200px;
+			margin-top:20px;
+		}
+		img.logo{
+			width: 100%;
+			max-width: 100px;
+			margin-top:20px;
 		}
 	
 	</style>
@@ -45,29 +76,47 @@
 	<div class="allthings">
 	
 		<!--This begins the different boxes you can have. The first box has a different style than the rest-->
-		<div id="title" class="header"><!--to modify the style, look at div.header in the style section-->
-			<h1>Hello World</h1>
-			<h3>Go To...</h2>
+		<div id="title" class="header2"><!--to modify the style, look at div.header in the style section-->
+			<img src="MeLogo3.png" alt="Xinu" class="melogo">
+			<h1>Sarah Skinner</h1>
+			<h3>This is what I'm doing right now.</h2>
 			<!--these are links. You can set the destination to other sites or other parts of your page. If you want to 
 				go to a different part of the page, then you have to give that part an id such as "item1"-->
-			<a href="https://isitchristmas.com/">Is it Christmas?</a>
-			<a href="#item1">Menu</a>
-			<a href="#item2">Drinks</a>
-			<a href="#item3">Item 3</a>
+			<!-- <a href="https://isitchristmas.com/">Is it Christmas?</a> -->
+			<!-- <a href="#item1">Menu</a> -->
+			<!-- <a href="#item2">Drinks</a> -->
+			<!-- <a href="#item3">Item 3</a> -->
 		</div>
-		<div id="item1" class="content"> <!--to modify the style, look at div.content in the style section-->
-			<h2>Menu</h2>
-			<p>begin filling in what you want here</p>
+		<div class="header">
+			<hr>
 		</div>
-		<div id="item2" class="content">
-			<h2>Drinks</h2>
-			<p>You don't need to keep all the different backgrounds, but it's good to see where the boxes start and stop while you develop your site</p>
+		
+		<div class="contentbox">
+			<div id="item1" class="content"> <!--to modify the style, look at div.content in the style section-->
+				<a href="https://github.com/sssm8d" target="_blank"><img src="github.png" alt="Github" class="logo"></a>
+				<h2>Github</h2>
+				<p>See my contributions to collaborations as well as individual projects.</p>
+			</div>
+			<div id="item2" class="content">
+				<a href="https://www.upwork.com/freelancers/~01a120b13dd5d61cae" target="_blank"><img src="upwork-icon.png" alt="UpWork" class="logo"></a>
+				<h2>Upwork</h2>
+				<p>Hire me as a freelancer.</p>
+			</div>
+			<div id="item3" class="content">
+				<a href="https://www.linkedin.com/in/sarah-skinner-916038156/" target="_blank"><img src="linkedin.png" alt="LinkedIn" class="logo"></a>
+				<h2>LinkedIn</h2>
+				<p>Look at my resume.</p>
+			</div>
+			<div id="item4" class="content">
+				<a href="https://www.linkedin.com/in/sarah-skinner-916038156/" target="_blank"><img src="insta.png" alt="Instagram" class="logo"></a>
+				<h2>Instagram</h2>
+				<p>Look at pictures of my cat Rockstar.</p>
+			</div>
 		</div>
-		<div id="item3" class="content">
-			<h2>Item 3</h2>
-			<p>You don't need to keep all the different backgrounds, but it's good to see where the boxes start and stop while you develop your site</p>
+		<div class="header">
+			<hr>
+			<a href="#title" style="text-shadow:0px 0px black;color:white;">Back to top</a>
 		</div>
-		<a href="#title">Back to top</a>
 	
 	</div>
 	<!--id is used to specify a single element. Only this div will have this id "tim"-->
