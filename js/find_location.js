@@ -1,7 +1,9 @@
 var t = 500;
 
+require('dotenv').config();
+
 function default_bg(){
-	document.getElementById("greg").style.backgroundImage = "url('bg9.jpg')";
+	document.getElementById("greg").style.backgroundImage = "url('css/bg9.jpg')";
 }
 
 fetch('https://api.ipify.org/?format=json')
