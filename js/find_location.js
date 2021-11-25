@@ -1,7 +1,5 @@
 var t = 500;
 
-require('dotenv').config();
-
 function default_bg(){
 	document.getElementById("greg").style.backgroundImage = "url('css/bg9.jpg')";
 }
@@ -53,6 +51,8 @@ setTimeout(function(){document.getElementById("linkedin").innerHTML = "Look at m
 t=t+500;
 setTimeout(function(){document.getElementById("insta").innerHTML = "Look at pictures of my cat Rockstar.";}, t);
 t=t+500;
+
+console.log(process.env);
 
 //get use ipinfo
 //get weather based off of zip code
