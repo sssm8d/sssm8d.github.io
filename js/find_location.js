@@ -1,4 +1,3 @@
-var t = 500;
 
 function default_bg(){
 	document.getElementById("greg").style.backgroundImage = "url('css/bg9.jpg')";
@@ -17,8 +16,7 @@ fetch('https://api.ipify.org/?format=json')
 			fetch(url2)
 			.then(response => response.json())
 			.then(function(weather_data){
-				setTimeout(function(){document.getElementById("greg").style.backgroundImage = "url('js/weather_bg/"+weather_data.weather[0].main.toString()+".jpg')";}, t);
-				t=t+500;
+				document.getElementById("greg").style.backgroundImage = "url('js/weather_bg/"+weather_data.weather[0].main.toString()+".jpg')";
 				
 			})
 			.catch(function(error) {
@@ -41,17 +39,11 @@ fetch('https://api.ipify.org/?format=json')
   });
 
 
-setTimeout(function(){document.getElementById("intro").innerHTML = "That's me. This is what I'm doing right now.";}, t);
-t=t+500;
-setTimeout(function(){document.getElementById("github").innerHTML = "See my contributions to collaborations as well as individual projects.";}, t);
-t=t+500;
-setTimeout(function(){document.getElementById("upwork").innerHTML = "Hire me as a freelancer.";}, t);
-t=t+500;
-setTimeout(function(){document.getElementById("linkedin").innerHTML = "Look at my resume.";}, t);
-t=t+500;
-setTimeout(function(){document.getElementById("insta").innerHTML = "Look at pictures of my cat Rockstar.";}, t);
-t=t+500;
-
+document.getElementById("intro").innerHTML = "That's me. This is what I'm doing right now.";
+document.getElementById("github").innerHTML = "See my contributions to collaborations as well as individual projects.";
+document.getElementById("upwork").innerHTML = "Hire me as a freelancer.";
+document.getElementById("linkedin").innerHTML = "Look at my resume.";
+document.getElementById("insta").innerHTML = "Look at pictures of my cat Rockstar.";
 console.log(process.env);
 
 //get use ipinfo
