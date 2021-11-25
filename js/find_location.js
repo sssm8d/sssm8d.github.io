@@ -7,7 +7,7 @@ fetch('https://api.ipify.org/?format=json')
   .then(response => response.json())
   .then(function(ip){
 	  
-	  let url = "https://ipinfo.io/"+ip.ip.toString()+"?token="+'{{ env('secrets.IPINFO_TOKEN') }}';
+	  let url = "https://ipinfo.io/"+ip.ip.toString()+"?token="+ipinfo_token;
 	  fetch(url)
 		.then(response => response.json())
 		.then(function(data){
