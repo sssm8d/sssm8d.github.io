@@ -31,11 +31,10 @@ jobs:
     - run: npm test
     
     - name: Install Dependencies (prod)
-        
-    - run: yarn install --frozen-lockfile --production
+      run: yarn install --frozen-lockfile --production
         
     - name: Run Tests (JEST)
-    - run: yarn test --ci --silent --testPathIgnorePatterns=experimental
+      run: yarn test --ci --silent --testPathIgnorePatterns=experimental
         env:
           CI: true
           IPINFO_TOKEN: ${{ secrets.IPINFO_TOKEN }}
