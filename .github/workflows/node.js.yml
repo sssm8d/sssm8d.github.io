@@ -35,7 +35,7 @@ jobs:
         
     - name: Run Tests (JEST)
       run: yarn test --ci --silent --testPathIgnorePatterns=experimental
-        env:
-          CI: true
-          IPINFO_TOKEN: ${{ secrets.IPINFO_TOKEN }}
-          WEATHER_TOKEN: ${{ secrets.WEATHER_TOKEN }}
+      env:
+        CI: true
+        IPINFO_TOKEN: ${{ secrets.IPINFO_TOKEN }}
+        WEATHER_TOKEN: ${{ secrets.WEATHER_TOKEN }}
