@@ -25,7 +25,11 @@ jobs:
 
       - name: Install Dependencies (prod)
         run: yarn install --frozen-lockfile --production
+        
+      - name: setup node
         run: npm init -y
+        
+      - name: setup dotenv
         run: npm i dotenv
 
       - name: Run Tests (JEST)
