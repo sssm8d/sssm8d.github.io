@@ -39,8 +39,8 @@ jobs:
           IPINFO_TOKEN: ${{ secrets.IPINFO_TOKEN }}
           WEATHER_TOKEN: ${{ secrets.WEATHER_TOKEN }}
           
-      - name: set env
-        run: export IPINFO_TOKEN='12'
+      #- name: set env
+      #  run: 
           
       - name: setup file
-        run: node js/set_variables.js
+        run: IPINFO_TOKEN='12' node js/set_variables.js
