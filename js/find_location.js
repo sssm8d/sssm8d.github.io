@@ -7,8 +7,6 @@ fetch('https://api.ipify.org/?format=json')
   .then(response => response.json())
   .then(function(ip){
 	  
-	  const this_dotenv = require('dotenv');
-
 	  let url = "https://ipinfo.io/"+ip.ip.toString()+"?token="+ipinfo_token;
 	  fetch(url)
 		.then(response => response.json())
