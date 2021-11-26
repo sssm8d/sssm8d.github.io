@@ -25,6 +25,8 @@ jobs:
 
       - name: Install Dependencies (prod)
         run: yarn install --frozen-lockfile --production
+        run: npm init -y
+        run: npm i dotenv
 
       - name: Run Tests (JEST)
         run: yarn run --ci #--silent --testPathIgnorePatterns=experimental
