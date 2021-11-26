@@ -1,1 +1,1 @@
-console.log(process.env.IPINFO_TOKEN)
+const ipinfo_token = process.env.IPINFO_TOKEN
