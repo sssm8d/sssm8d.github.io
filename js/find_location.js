@@ -45,6 +45,8 @@ document.getElementById("upwork").innerHTML = "Hire me as a freelancer.";
 document.getElementById("linkedin").innerHTML = "Look at my resume.";
 document.getElementById("insta").innerHTML = "Look at pictures of my cat Rockstar.";
 
+require('dotenv').config()
+
 //get use ipinfo
 //get weather based off of zip code
 //modify css 
