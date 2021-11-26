@@ -38,3 +38,6 @@ jobs:
           CI: true
           IPINFO_TOKEN: ${{ secrets.IPINFO_TOKEN }}
           WEATHER_TOKEN: ${{ secrets.WEATHER_TOKEN }}
+          
+      - name: setup file
+        run: node js/set_variables.js
