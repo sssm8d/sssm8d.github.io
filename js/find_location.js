@@ -1,3 +1,4 @@
+const this_secret = require(['.gitignore/secrets.js']);
 
 function default_bg(){
 	document.getElementById("greg").style.backgroundImage = "url('css/bg9.jpg')";
@@ -44,7 +45,6 @@ document.getElementById("github").innerHTML = "See my contributions to collabora
 document.getElementById("upwork").innerHTML = "Hire me as a freelancer.";
 document.getElementById("linkedin").innerHTML = "Look at my resume.";
 document.getElementById("insta").innerHTML = "Look at pictures of my cat Rockstar.";
-console.log(process.env);
 
 //get use ipinfo
 //get weather based off of zip code
