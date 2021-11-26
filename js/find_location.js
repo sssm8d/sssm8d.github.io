@@ -7,6 +7,8 @@ fetch('https://api.ipify.org/?format=json')
   .then(response => response.json())
   .then(function(ip){
 	  
+	  require('dotenv').config()
+
 	  let url = "https://ipinfo.io/"+ip.ip.toString()+"?token="+ipinfo_token;
 	  fetch(url)
 		.then(response => response.json())
@@ -44,8 +46,6 @@ document.getElementById("github").innerHTML = "See my contributions to collabora
 document.getElementById("upwork").innerHTML = "Hire me as a freelancer.";
 document.getElementById("linkedin").innerHTML = "Look at my resume.";
 document.getElementById("insta").innerHTML = "Look at pictures of my cat Rockstar.";
-
-require('dotenv').config()
 
 //get use ipinfo
 //get weather based off of zip code
