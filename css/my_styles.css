@@ -78,7 +78,8 @@ div.content{
 	flex-direction:column;
 	width: 25%;
 	margin: 20px;
-	min-width: 40%;
+	min-width: 450px;
+	width: 40%;
 	min-height: 350px;
 	justify-content: center;
 	align-items:center;
