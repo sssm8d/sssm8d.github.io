@@ -74,6 +74,7 @@ div.header2{
 }
 div.content{
 	background-color: rgba(0, 0, 0, 0.5);
+	/* flex:2; */
 	display: flex;
 	flex-direction:column;
 	width: 25%;
@@ -89,7 +90,7 @@ div.contentbox{
 	display:flex;
 	flex-direction:row;
 	flex-wrap:wrap;
-	align-items: center;
+	/* align-items: center; */
 	justify-content: center;
 }
 img.melogo{
