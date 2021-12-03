@@ -6,7 +6,7 @@ var hemisphere = "None";
 function default_bg(){
 	document.getElementById("greg").style.backgroundImage = "url('css/bg9.jpg')";
 	
-	document.getElementById("intro").innerHTML = "That's me. This is what I'm doing right now.";
+	// document.getElementById("intro").innerHTML = "That's me. This is what I'm doing right now.";
 	// document.getElementById("github").innerHTML = "See my contributions to collaborations as well as individual projects.";
 	// document.getElementById("upwork").innerHTML = "Hire me as a freelancer.";
 	document.getElementById("linkedin").innerHTML = "Look at my resume.";
@@ -42,7 +42,11 @@ fetch('https://api.ipify.org/?format=json')
 				}
 				else{
 					this_time = "Night";
-					if (weather_data.weather[0].main=="Clouds"){
+					if (weather_data.weather[0].main=="Clouds" || weather_data.weather[0].main=="Snow" ||
+					weather_data.weather[0].main=="Ash" || weather_data.weather[0].main=="Clear" ||
+					weather_data.weather[0].main=="Dust" || weather_data.weather[0].main=="Sand" ||
+					weather_data.weather[0].main=="Smoke"
+					){
 						document.getElementById("melogo").src="MeLogo3-white-outline.png";
 					};
 				};
@@ -69,7 +73,7 @@ fetch('https://api.ipify.org/?format=json')
 				
 				
 				//fill out words
-				document.getElementById("intro").innerHTML = "That's me. This is what I'm doing right now.";
+				// document.getElementById("intro").innerHTML = "That's me. This is what I'm doing right now.";
 				// document.getElementById("github").innerHTML = "See my contributions to collaborations as well as individual projects.";
 				if (temp_message == ""){
 					document.getElementById("linkedin").innerHTML = "Look at my resume.";
@@ -113,19 +117,6 @@ fetch('https://catfact.ninja/fact')
 .then(response => response.json())
 .then(function(fact){
 	document.getElementById("insta").innerHTML = "Fun Fact: "+fact.fact;
-})
-.catch(function(error) {
-  console.log(error);
-});
-
-fetch('https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single')
-.then(response => response.json())
-.then(function(fact){
-	if (fact.joke.includes('"')){
-		document.getElementById("github").innerHTML = fact.joke;
-	}else{
-		document.getElementById("github").innerHTML = '"'+fact.joke+'"';
-	};
 })
 .catch(function(error) {
   console.log(error);
