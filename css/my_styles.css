@@ -73,14 +73,14 @@ div.header{
 	margin:20px;
 }
 div.header2{
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.6);
 	width: 80%;
 	margin:20px;
 	margin-bottom:0px;
 	padding: 10px;
 }
 div.header3{
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.6);
 	width: 80%;
 	margin:20px;
 	margin-bottom:0px;
@@ -92,13 +92,13 @@ div.header3{
 	justify-content: space-around;
 }
 div.content{
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.6);
 	/* flex:2; */
 	display: flex;
 	flex-direction:column;
 	width: 25%;
 	margin: 20px;
-	width: 70%;
+	width: 80%;
 	max-width: 500px;
 	min-height: 350px;
 	justify-content: center;
@@ -147,5 +147,6 @@ div.logobar{
 	flex-direction:row;
 	justify-content: space-around;
 	align-items: center;
+	flex-wrap:wrap;
 	/* background-color: white; */
 }
