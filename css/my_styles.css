@@ -153,3 +153,6 @@ div.logobar{
 	flex-wrap:wrap;
 	/* background-color: white; */
 }
+iframe.window{
+	width: 80%;
+}
