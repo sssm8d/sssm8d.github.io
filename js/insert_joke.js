@@ -1,3 +1,4 @@
+//get kosher programming joke
 fetch('https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single')
 .then(response => response.json())
 .then(function(fact){

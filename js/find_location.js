@@ -3,35 +3,29 @@ ipinfo_token = "124667c8994bc6";
 weather_token = "e3e67c3cef974039f2ccd4fb5fea822e";
 var hemisphere = "None";
 
+//if the api doesn't work, then this replaced the background with generic background and assumes the hemisphere is northern
 function default_bg(){
 	document.getElementById("greg").style.backgroundImage = "url('css/bg9.jpg')";
-	
-	// document.getElementById("intro").innerHTML = "That's me. This is what I'm doing right now.";
-	// document.getElementById("github").innerHTML = "See my contributions to collaborations as well as individual projects.";
-	// document.getElementById("upwork").innerHTML = "Hire me as a freelancer.";
-	document.getElementById("linkedin").innerHTML = "Look at my resume.";
-	// document.getElementById("insta").innerHTML = "Look at pictures of my cat Rockstar.";
-	
-	//put the emoji id number into the format the html page will accept (&#000000)
 	const phase = getLunarPhaseNorthern(date);
 	document.getElementById("tim").innerHTML = ( phase );
 }
 
-fetch('https://api.ipify.org/?format=json')
+fetch('https://api.ipify.org/?format=json') //get the ip address
   .then(response => response.json())
   .then(function(ip){
 	  
-	  let url = "https://ipinfo.io/"+ip.ip.toString()+"?token="+ipinfo_token;
+	  let url = "https://ipinfo.io/"+ip.ip.toString()+"?token="+ipinfo_token;//get the location from ip address
 	  fetch(url)
 		.then(response => response.json())
 		.then(function(data){
 			
 			let url2="https://api.openweathermap.org/data/2.5/weather?zip="+data.postal.toString()+","+data.country.toString()+"&appid="+weather_token;
 			fetch(url2)
-			.then(response => response.json())
+			.then(response => response.json()) //get weather data from location
 			.then(function(weather_data){
-				this_time = "Day";
 				
+				//choose background and modify features depending on background chosen
+				this_time = "Day";
 				var now = new Date().getTime() / 1000;
 				if ( now>weather_data.sys.sunrise && now<weather_data.sys.sunset ){
 					this_time = "Day";
@@ -47,11 +41,12 @@ fetch('https://api.ipify.org/?format=json')
 					weather_data.weather[0].main=="Dust" || weather_data.weather[0].main=="Sand" ||
 					weather_data.weather[0].main=="Smoke"
 					){
-						document.getElementById("melogo").src="MeLogo3-white-outline.png";
+						document.getElementById("melogo").src="logos/MeLogo3-white-outline.png";
 					};
 				};
 				document.getElementById("greg").style.backgroundImage = "url('js/weather_bg/"+weather_data.weather[0].main+this_time+".jpg')";
 				
+				//calculate distance in miles from lat and long
 				var latangle = (weather_data.coord.lat-40.5);
 				if (latangle<-180){
 					latangle = 360+latangle;
@@ -64,6 +59,7 @@ fetch('https://api.ipify.org/?format=json')
 				var lonlength = lonangle/180.0*3958.8*Math.PI;
 				var distance = Math.sqrt( latlength*latlength+lonlength*lonlength);
 				
+				//fill out words
 				var temp_message = "";
 				if (weather_data.main.temp < 283.15){
 					temp_message = "Keep warm inside while you checkout my resume."
@@ -71,10 +67,6 @@ fetch('https://api.ipify.org/?format=json')
 					temp_message = "Stay cool inside while you checkout my resume."
 				}
 				
-				
-				//fill out words
-				// document.getElementById("intro").innerHTML = "That's me. This is what I'm doing right now.";
-				// document.getElementById("github").innerHTML = "See my contributions to collaborations as well as individual projects.";
 				if (temp_message == ""){
 					document.getElementById("linkedin").innerHTML = "Look at my resume.";
 				}else{
@@ -83,7 +75,8 @@ fetch('https://api.ipify.org/?format=json')
 				document.getElementById("upwork").innerHTML = "Just because we're "+distance.toFixed(2)+" miles apart, doesn't mean we can't work together!";
 				
 				
-				//add mon phase at bottom
+				
+				//add moon phase at bottom
 				if (weather_data.coord.lat > 0.0){
 					const phase = getLunarPhaseNorthern(date);
 					document.getElementById("tim").innerHTML = ( phase );
@@ -113,6 +106,7 @@ fetch('https://api.ipify.org/?format=json')
 	default_bg();
   });
 
+//adds a random cat fact to instagram
 fetch('https://catfact.ninja/fact')
 .then(response => response.json())
 .then(function(fact){
