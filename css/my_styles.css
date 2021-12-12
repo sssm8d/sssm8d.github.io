@@ -82,6 +82,22 @@ div.header2{
 	margin-bottom:0px;
 	padding: 10px;
 }
+div.samplebox{
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 80%;
+	margin:20px;
+	margin-bottom:0px;
+	padding: 10px;
+	overflow:auto;
+	max-height:470px;
+}
+div.samplescrollbox{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	align-items: center;
+	justify-content: space-around;
+}
 div.header3{
 	background-color: rgba(0, 0, 0, 0.6);
 	width: 80%;
@@ -99,9 +115,21 @@ div.content{
 	/* flex:2; */
 	display: flex;
 	flex-direction:column;
-	width: 25%;
 	margin: 20px;
 	width: 80%;
+	max-width: 500px;
+	min-height: 350px;
+	justify-content: center;
+	align-items:center;
+	/* padding:10px; */
+}
+div.sample{
+	background-color: rgba(0, 0, 0, 0.6);
+	/* flex:2; */
+	display: flex;
+	flex-direction:column;
+	margin: 20px;
+	width: 45%;
 	max-width: 500px;
 	min-height: 350px;
 	justify-content: center;
@@ -133,6 +161,11 @@ img.placeholder{
 img.logo{
 	width: 100%;
 	max-width: 100px;
+	margin-top:20px;
+}
+img.figure{
+	width: 100%;
+	max-width: 200px;
 	margin-top:20px;
 }
 div.randomemoji{
