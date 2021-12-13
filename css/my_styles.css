@@ -130,6 +130,7 @@ div.sample{
 	flex-direction:column;
 	margin: 20px;
 	width: 45%;
+	min-width: 250px;
 	max-width: 500px;
 	min-height: 350px;
 	justify-content: center;
