@@ -30,9 +30,13 @@ fetch('https://api.ipify.org/?format=json') //get the ip address
 				if ( now>weather_data.sys.sunrise && now<weather_data.sys.sunset ){
 					this_time = "Day";
 					if (weather_data.weather[0].main=="Snow" || weather_data.weather[0].main=="Clear" || 
-					weather_data.weather[0].main=="Smoke" || weather_data.weather[0].main=="Clouds"){
+					weather_data.weather[0].main=="Smoke" || weather_data.weather[0].main=="Clouds" ||
+					weather_data.weather[0].main=="Rain"){
 						document.getElementById("backtotop").style.color = "black";
 					}
+					if (weather_data.weather[0].main=="Clouds"){
+						document.getElementById("melogo").src="logos/MeLogo3-white-outline.png";
+					};
 				}
 				else{
 					this_time = "Night";
