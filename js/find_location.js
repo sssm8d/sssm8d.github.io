@@ -30,8 +30,7 @@ fetch('https://api.ipify.org/?format=json') //get the ip address
 				if ( now>weather_data.sys.sunrise && now<weather_data.sys.sunset ){
 					this_time = "Day";
 					if (weather_data.weather[0].main=="Snow" || weather_data.weather[0].main=="Clear" || 
-					weather_data.weather[0].main=="Smoke" || weather_data.weather[0].main=="Clouds" ||
-					weather_data.weather[0].main=="Rain"){
+					weather_data.weather[0].main=="Smoke" || weather_data.weather[0].main=="Clouds" ){
 						document.getElementById("backtotop").style.color = "black";
 					}
 					if (weather_data.weather[0].main=="Clouds"){
@@ -69,8 +68,9 @@ fetch('https://api.ipify.org/?format=json') //get the ip address
 					temp_message = "Keep warm inside while you checkout my resume."
 				}else if ( weather_data.main.temp > 305.372 ){
 					temp_message = "Stay cool inside while you checkout my resume."
+				}else if ( weather_data.weather[0].main=="Rain" ){
+					temp_message = "Stay dry inside while you checkout my resume."
 				}
-				
 				if (temp_message == ""){
 					document.getElementById("linkedin").innerHTML = "Look at my resume.";
 				}else{
