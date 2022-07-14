@@ -76,4 +76,6 @@ const isWaning = (date = new Date()) => {
 
 const date = new Date();
 const phase = getLunarPhaseNorthern(date);
-document.getElementById("tim").innerHTML = ( phase );
+if(document.getElementById("tim")){
+	document.getElementById("tim").innerHTML = ( phase );
+}

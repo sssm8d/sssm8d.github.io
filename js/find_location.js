@@ -7,7 +7,7 @@ var hemisphere = "None";
 function default_bg(){
 	document.getElementById("greg").style.backgroundImage = "url('css/bg9.jpg')";
 	const phase = getLunarPhaseNorthern(date);
-	document.getElementById("tim").innerHTML = ( phase );
+	if(document.getElementById("tim")) document.getElementById("tim").innerHTML = ( phase );
 }
 
 fetch('https://api.ipify.org/?format=json') //get the ip address
@@ -34,7 +34,9 @@ fetch('https://api.ipify.org/?format=json') //get the ip address
 						document.getElementById("backtotop").style.color = "black";
 					}
 					if (weather_data.weather[0].main=="Clouds"){
-						document.getElementById("melogo").src="logos/MeLogo3-white-outline.png";
+						if( document.getElementById("melogo") ){
+							document.getElementById("melogo").src="logos/MeLogo3-white-outline.png";
+						}
 					};
 				}
 				else{
@@ -71,22 +73,25 @@ fetch('https://api.ipify.org/?format=json') //get the ip address
 				}else if ( weather_data.weather[0].main=="Rain" ){
 					temp_message = "Stay dry inside while you checkout my resume."
 				}
-				if (temp_message == ""){
-					document.getElementById("linkedin").innerHTML = "Look at my resume.";
-				}else{
-					document.getElementById("linkedin").innerHTML = temp_message;
+				if(document.getElementById("linkedin")){
+					if (temp_message == ""){
+						document.getElementById("linkedin").innerHTML = "Check out my resume.";
+					}else{
+						document.getElementById("linkedin").innerHTML = temp_message;
+					}
 				}
-				document.getElementById("upwork").innerHTML = "Just because we're "+distance.toFixed(2)+" miles apart, doesn't mean we can't work together!";
-				
+				if(document.getElementById("upwork")){
+					document.getElementById("upwork").innerHTML = "Just because we're "+distance.toFixed(2)+" miles apart, doesn't mean we can't work together!";
+				}
 				
 				
 				//add moon phase at bottom
 				if (weather_data.coord.lat > 0.0){
 					const phase = getLunarPhaseNorthern(date);
-					document.getElementById("tim").innerHTML = ( phase );
+					if(document.getElementById("tim")) document.getElementById("tim").innerHTML = ( phase );
 				}else{
 					const phase = getLunarPhaseSouthern(date);
-					document.getElementById("tim").innerHTML = ( phase );
+					if(document.getElementById("tim")) document.getElementById("tim").innerHTML = ( phase );
 				}
 				
 				
@@ -114,7 +119,9 @@ fetch('https://api.ipify.org/?format=json') //get the ip address
 fetch('https://catfact.ninja/fact')
 .then(response => response.json())
 .then(function(fact){
-	document.getElementById("insta").innerHTML = "Fun Fact: "+fact.fact;
+	if(document.getElementById("insta")){
+		document.getElementById("insta").innerHTML = "Fun Fact: "+fact.fact;
+	}
 })
 .catch(function(error) {
   console.log(error);
