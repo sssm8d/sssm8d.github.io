@@ -46,7 +46,7 @@ fetch('https://api.ipify.org/?format=json') //get the ip address
 					weather_data.weather[0].main=="Dust" || weather_data.weather[0].main=="Sand" ||
 					weather_data.weather[0].main=="Smoke"
 					){
-						document.getElementById("melogo").src="logos/MeLogo3-white-outline.png";
+						if( document.getElementById("melogo") )	document.getElementById("melogo").src="logos/MeLogo3-white-outline.png";
 					};
 				};
 				document.getElementById("greg").style.backgroundImage = "url('js/weather_bg/"+weather_data.weather[0].main+this_time+".jpg')";
@@ -75,7 +75,7 @@ fetch('https://api.ipify.org/?format=json') //get the ip address
 				}
 				if(document.getElementById("linkedin")){
 					if (temp_message == ""){
-						document.getElementById("linkedin").innerHTML = "Check out my resume.";
+						document.getElementById("linkedin").innerHTML = "Check out my resume and then offer me a job. &#129488";
 					}else{
 						document.getElementById("linkedin").innerHTML = temp_message;
 					}
