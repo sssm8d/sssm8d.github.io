@@ -32,6 +32,7 @@ fetch('https://api.ipify.org/?format=json') //get the ip address
 					if (weather_data.weather[0].main=="Snow" || weather_data.weather[0].main=="Clear" || 
 					weather_data.weather[0].main=="Smoke" || weather_data.weather[0].main=="Clouds" ){
 						document.getElementById("backtotop").style.color = "black";
+						if(document.getElementById("backtotop2")) document.getElementById("backtotop2").style.color = "black";
 					}
 					if (weather_data.weather[0].main=="Clouds"){
 						if( document.getElementById("melogo") ){

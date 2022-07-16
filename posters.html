@@ -29,29 +29,34 @@
 		</div>
 		
 		<div class="contentbox2">
-			<iframe src="posters/SkinnerPoster.pdf" height="900" width="100%"></iframe>
+			<iframe id="poster1" src="posters/SkinnerPoster.pdf" height="900" width="100%"></iframe>
 			<div class="header">
+				<a href="posters/SkinnerPoster.pdf" target="_blank">Open in new tab</a>
 				<hr>
 			</div>
-			<iframe src="posters/Copy of poster2.pdf" height="900" width="100%"></iframe>
-			<div class="header">
-				<hr>
-			</div>
-			<iframe src="posters/SKINNER_S_poster.pdf" height="900" width="100%"></iframe>
-			
-			<div class="header">
-				<hr>
-			</div>
-			<iframe src="posters/Final Poster (3).pdf" height="900" width="100%"></iframe>
-			<!-- <div id="item0" class="content"> <!--to modify the style, look at div.content in the style section-->
-				
+			<!-- <div class="header"> -->
+				<!-- <hr> -->
 			<!-- </div> -->
+			<iframe id="poster2" src="posters/Copy of poster2.pdf" height="900" width="100%"></iframe>
+			<div class="header">
+				<a href="posters/Copy of poster2.pdf" target="_blank">Open in new tab</a>
+				<hr>
+			</div>
+			<iframe id="poster3" src="posters/SKINNER_S_poster.pdf" height="900" width="100%"></iframe>
+			<div class="header">
+				<a href="posters/SKINNER_S_poster.pdf" target="_blank">Open in new tab</a>
+				<hr>
+			</div>
+			<iframe id="poster4" src="posters/Final Poster (3).pdf" height="900" width="100%"></iframe>
+			<div class="header">
+				<a href="posters/Final Poster (3).pdf" target="_blank">Open in new tab</a>
+			</div>
 		</div>
 		<div class="header">
 			<hr>
 			<div id="mim" class="randomemoji"></div><!--this div is empty on purpose. The javascript code is going to put something here-->
-			<a href="#title" class="backtotop" id="backtotop" style="color:black;">Back to top</a><br>
-			<a href="https://xinucode.github.io/" class="backtotop" style="color:black;">Back to my site</a>
+			<a href="#title" class="backtotop" id="backtotop" style="color:white;">Back to top</a><br>
+			<a href="https://xinucode.github.io/" class="backtotop" id="backtotop2" style="color:white;">Back to my site</a>
 		</div>
 		
 	
@@ -63,6 +68,10 @@
 <script src="js/lunar_phase.js"></script>
 <script src="js/find_location.js"></script>
 <script src="js/insert_random_emoji.js"></script>
-<script src="js/insert_joke.js"></script>
+<!-- <script src="js/insert_joke.js"></script> -->
+<script>
+	const posters = ["poster1","poster2","poster3","poster4"]
+	for( let poster of posters) document.getElementById(poster).style.height =  (0.90*document.getElementById(poster).offsetWidth).toString()+"px";
+</script>
 
 </html>
