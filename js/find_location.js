@@ -33,6 +33,11 @@ fetch('https://api.ipify.org/?format=json') //get the ip address
 					weather_data.weather[0].main=="Smoke" || weather_data.weather[0].main=="Clouds" || weather_data.weather[0].main=="Rain"){
 						document.getElementById("backtotop").style.color = "black";
 						if(document.getElementById("backtotop2")) document.getElementById("backtotop2").style.color = "black";
+						// if(document.getElementById("backtotop3")) document.getElementById("backtotop3").style.color = "black";
+						// if(document.getElementById("backtotop4")) document.getElementById("backtotop4").style.color = "black";
+						// if(document.getElementById("backtotop5")) document.getElementById("backtotop5").style.color = "black";
+						// if(document.getElementById("backtotop6")) document.getElementById("backtotop6").style.color = "black";
+						// if(document.getElementById("backtotop7")) document.getElementById("backtotop7").style.color = "black";
 					}
 					if (weather_data.weather[0].main=="Clouds" || weather_data.weather[0].main=="Rain"){
 						if( document.getElementById("melogo") ){
