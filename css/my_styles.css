@@ -39,6 +39,10 @@ body.book{
 	font-family: "Times New Roman", Times, serif;
 	
 }
+.cv{
+	text-align: left;
+	margin-left: 30px;
+}
 h1{
 	font-family: "Times New Roman", Times, serif;
 }
@@ -87,6 +91,17 @@ div.header2{
 	margin:20px;
 	margin-bottom:0px;
 	padding: 10px;
+}
+div.header3{
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 80%;
+	margin:20px;
+	margin-bottom:0px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	/* justify-content: center; */
 }
 div.samplebox{
 	background-color: rgba(0, 0, 0, 0.6);
