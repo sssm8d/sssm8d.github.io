@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
 	<link rel="icon" href="logos/MeLogo3-purple-circle2.png">
 	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 </head>
 	
 <body id="greg">
@@ -16,14 +17,72 @@
 		<div id="title" class="header3">
 			<img src="logos/MeLogo3.png" alt="Xinu" id="melogo" style="height: 180px;">
 			<div>
-				<h1>Sarah Skinner</h1>
+				<canvas id="me"></canvas>
+				<!-- <h1>Sarah Skinner</h1> -->
 				<h4>(she/her)</h4>
 				<h3>That's me. This is what I'm doing right now.</h3>
 				<h3 id="intro"></h3>
 			</div>
-			<div style="height: 180px;width: 180px;"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5a95pig54cb&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;s=180" async="async"></script></div>
+			<!-- <div style="height: 180px;width: 180px;"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5a95pig54cb&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;s=180" async="async"></script></div> -->
 		</div>
-		
+		<script src="js/leon.js"></script>
+		<script>
+			var leon, canvas, ctx;
+
+			const sw = 360;
+			const sh = 100;
+			const pixelRatio = 2;
+
+			function init() {
+				canvas = document.getElementById('me');
+				ctx = canvas.getContext("2d");
+
+				canvas.width = sw * pixelRatio;
+				canvas.height = sh * pixelRatio;
+				canvas.style.width = sw + 'px';
+				canvas.style.height = sh + 'px';
+				ctx.scale(pixelRatio, pixelRatio);
+
+				leon = new LeonSans({
+					text: 'Sarah Skinner',
+					color: ['white'],
+					size: 60,
+					weight: 300
+				});
+				
+				
+				let i, total = leon.drawing.length;
+				for (i = 0; i < total; i++) {
+					TweenMax.fromTo(leon.drawing[i], 1.6, {
+						value: 0
+					}, {
+						delay: i * 0.05,
+						value: 1,
+						ease: Power4.easeOut
+					});
+				}
+
+				requestAnimationFrame(animate);
+			}
+
+			function animate(t) {
+				requestAnimationFrame(animate);
+
+				ctx.clearRect(0, 0, sw, sh);
+
+				const x = (sw - leon.rect.w) / 2;
+				const y = (sh - leon.rect.h) / 2;
+				leon.position(x, y);
+
+				leon.draw(ctx);
+			}
+
+			window.onload = () => {
+				init();
+			};
+			document.getElementById('me').addEventListener("mouseover", init);
+			
+		</script>
 		<div class="header">
 			<hr>
 		</div>
