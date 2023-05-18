@@ -13,7 +13,7 @@
 <body id="greg">
 
 	<div class="allthings">
-	
+		<div style="width: 75%;">
 		<div id="title" class="header3">
 			<img src="logos/MeLogo3.png" alt="Xinu" id="melogo" style="height: 180px;">
 			<div>
@@ -25,12 +25,13 @@
 			</div>
 			<div style="height: 180px;width: 180px;"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5a95pig54cb&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;s=180" async="async"></script></div>
 		</div>
+		</div>
 		<script src="js/leon.js"></script>
 		<script>
 			var leon, canvas, ctx;
 
 			const sw = 360;
-			const sh = 100;
+			const sh = 80;
 			const pixelRatio = 2;
 
 			function init() {
@@ -46,7 +47,7 @@
 				leon = new LeonSans({
 					text: 'Sarah Skinner',
 					color: ['white'],
-					size: 60,
+					size: 50,
 					weight: 300
 				});
 				
@@ -81,6 +82,7 @@
 				init();
 			};
 			document.getElementById('me').addEventListener("mouseover", init);
+			document.getElementById('me').addEventListener("click", init);
 			
 		</script>
 		<div class="header">
@@ -89,6 +91,7 @@
 		
 		<div class="contentbox">
 			<div id="item6" class="content"> 
+				<div class="contentinner">
 				<a href="https://www.cmu.edu/physics/people/graduate-students.html" target="_blank"><img src="logos/cmu-mascot-3-color-on-w.png" alt="CMU" class="logo"></a>
 				<a class="title" href="https://www.cmu.edu/physics/people/graduate-students.html" target="_blank"><h2>Carnegie Mellon University</h2></a>
 				<p id="cmu"></p>
@@ -96,35 +99,46 @@
 				<p>I'm currently studying Lattice QCD for my thesis under the mentorship of Dr. Colin Morningstar.</p>
 				<!-- <p>Check out my <a href="https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=Skinner%2C+Sarah%3B&terms-0-field=author&classification-physics=y&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first" target="_blank">papers</a> and <a href="posters.html" target="_blank">posters</a>.</p> -->
 				<p>Check out my <a href="https://scholar.google.com/citations?user=F7i_vbMAAAAJ&hl=en&inst=3203679203499159833" target="_blank">papers</a> and <a href="posters.html" target="_blank">posters</a>.</p>
+				</div>
 			</div>
 			<div id="item1" class="content"> 
+				<div class="contentinner">
 				<a href="https://github.com/xinucode" target="_blank"><img src="logos/github.png" alt="Github" class="logo"></a>
 				<a  class="title" href="https://github.com/xinucode" target="_blank"><h2>Github</h2></a>
 				<p id="github"></p>
 				<p>See my code contributions to collaborations as well as individual projects.</p>
+				</div>
+			</div>
+			<div id="item2" class="content">
+				<div class="contentinner">
+				<a href="https://www.upwork.com/freelancers/~01a120b13dd5d61cae" target="_blank"><img src="logos/upwork-icon.png" alt="UpWork" class="logo"></a>
+				<a  class="title" href="https://www.upwork.com/freelancers/~01a120b13dd5d61cae" target="_blank"><h2>Upwork</h2></a>
+				<p>Hire me online as a freelancer.</p>
+				<p id="upwork"></p>
+				</div>
 			</div>
 			<div id="item3" class="content">
+				<div class="contentinner">
 				<a href="posters/Sarah_Skinner_Resume.pdf" target="_blank"><img src="logos/resume.png" alt="Resume" class="logo"></a>
 				<a  class="title" href="posters/Sarah_Skinner_Resume.pdf" target="_blank"><h2>Resume</h2></a>
 				<!-- <a href="https://www.linkedin.com/in/sarah-skinner-916038156/" target="_blank"><img src="logos/linkedin.png" alt="LinkedIn" class="logo"></a> -->
 				<!-- <a  class="title" href="https://www.linkedin.com/in/sarah-skinner-916038156/" target="_blank"><h2>LinkedIn</h2></a> -->
 				<p id="linkedin">Check out my resume and then offer me a job. &#129488</p>
-			</div>
-			<div id="item2" class="content">
-				<a href="https://www.upwork.com/freelancers/~01a120b13dd5d61cae" target="_blank"><img src="logos/upwork-icon.png" alt="UpWork" class="logo"></a>
-				<a  class="title" href="https://www.upwork.com/freelancers/~01a120b13dd5d61cae" target="_blank"><h2>Upwork</h2></a>
-				<p>Hire me online as a freelancer.</p>
-				<p id="upwork"></p>
+				</div>
 			</div>
 			<div id="item6" class="content">
+				<div class="contentinner">
 				<a href="https://www.linkedin.com/in/sarah-skinner-916038156/" target="_blank"><img src="logos/linkedin.png" alt="LinkedIn" class="logo"></a>
 				<a  class="title" href="https://www.linkedin.com/in/sarah-skinner-916038156/" target="_blank"><h2>LinkedIn</h2></a>
 				<p>Connect with me on LinkedIn.</p>
+				</div>
 			</div>
 			<div id="item5" class="content">
+				<div class="contentinner">
 				<a href="https://www.xinuwrite.com/"><img src="logos/MeLogo3-circle-417077.png" alt="Xinuwrite" class="logo"></a>
 				<a  class="title" href="https://www.xinuwrite.com/"><h2>Xinuwrite</h2></a>
 				<p>Building a writing habit? Check out the site I developed and manage: Xinuwrite, the Daily Writing Challenge.</p>
+				</div>
 			</div>
 			<!-- <div id="item5" class="content"> -->
 				<!-- <a href="xinucode.html"><img src="logos/MeLogo3-purple-circle2.png" alt="xinu-code" class="logo"></a> -->
@@ -132,10 +146,12 @@
 				<!-- <p>Want to learn how to code? Check out my project-based tutoring.</p> -->
 			<!-- </div> -->
 			<div id="item4" class="content">
+				<div class="contentinner">
 				<a href="https://www.instagram.com/rockstar_the_rockstar/" target="_blank"><img src="logos/insta.png" alt="Instagram" class="logo"></a>
 				<a  class="title" href="https://www.instagram.com/rockstar_the_rockstar/" target="_blank"><h2>Instagram</h2></a>
 				<p>Look at pictures of my cat Rockstar.</p>
 				<p id="insta"></p>
+				</div>
 			</div>
 		</div>
 		<div class="header">
