@@ -37,7 +37,7 @@
 			function init() {
 			
 				if (window.screen.width<460){
-					sw = 200;
+					sw = 0.7*window.screen.width;
 					sh = 50;
 				}
 				canvas = document.getElementById('me');
@@ -49,12 +49,21 @@
 				canvas.style.height = sh + 'px';
 				ctx.scale(pixelRatio, pixelRatio);
 
-				leon = new LeonSans({
-					text: 'Sarah Skinner',
-					color: ['white'],
-					size: 60,
-					weight: 300
-				});
+				if (window.screen.width<460){
+					leon = new LeonSans({
+						text: 'Sarah Skinner',
+						color: ['white'],
+						size: 60,
+						weight: 300
+					});
+				}else{
+					leon = new LeonSans({
+						text: 'Sarah Skinner',
+						color: ['white'],
+						size: 40,
+						weight: 0.65*window.screen.width
+					});
+				}
 				
 				<!-- if (window.screen.width<460){ -->
 					<!-- sw = 200; -->
