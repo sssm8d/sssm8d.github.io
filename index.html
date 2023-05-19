@@ -38,7 +38,7 @@
 			
 				if (window.screen.width<460){
 					sw = 0.7*window.screen.width;
-					sh = 100;
+					sh = 120;
 				}
 				canvas = document.getElementById('me');
 				ctx = canvas.getContext("2d");
@@ -62,14 +62,14 @@
 					leon = new LeonSans({
 						text: 'Sarah',
 						color: ['white'],
-						size: 40,
-						weight: 0.60*window.screen.width
+						size: 50,
+						weight: 300
 					});
 					leon2 = new LeonSans({
 						text: 'Skinner',
 						color: ['white'],
-						size: 40,
-						weight: 0.60*window.screen.width
+						size: 50,
+						weight: 300
 					});
 				}
 				
@@ -113,7 +113,9 @@
 				var y = (sh - leon.rect.h) / 2;
 				if (window.screen.width<460){
 					var y = (sh - leon.rect.h) / 3;
-					leon2.position(x, y*2);
+					var x2 = (sw - leon2.rect.w) / 2;
+					<!-- var y2 = (sh - leon2.rect.h) / 2; -->
+					leon2.position(x2, y+leon.rect.h+5 );
 					leon2.draw(ctx);
 				}
 				leon.position(x, y);
