@@ -30,11 +30,16 @@
 		<script>
 			var leon, canvas, ctx;
 
-			const sw = 360;
-			const sh = 80;
+			var sw = 360;
+			var sh = 70;
 			const pixelRatio = 2;
 
 			function init() {
+			
+				if (window.screen.width<460){
+					sw = 200;
+					sh = 50;
+				}
 				canvas = document.getElementById('me');
 				ctx = canvas.getContext("2d");
 
@@ -47,10 +52,14 @@
 				leon = new LeonSans({
 					text: 'Sarah Skinner',
 					color: ['white'],
-					size: 50,
+					size: 60,
 					weight: 300
 				});
 				
+				<!-- if (window.screen.width<460){ -->
+					<!-- sw = 200; -->
+					<!-- sh = 50; -->
+				<!-- } -->
 				
 				let i, total = leon.drawing.length;
 				for (i = 0; i < total; i++) {
