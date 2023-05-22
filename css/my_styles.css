@@ -90,8 +90,8 @@ div.header{
 div.header2{
 	background-color: rgba(0, 0, 0, 0.6);
 	width: 75%;
-	margin:20px;
-	margin-bottom:0px;
+	margin: 20px;
+	margin-bottom: 0px;
 	padding: 10px;
 }
 /* div.header3{ */
@@ -111,26 +111,26 @@ div.samplebox{
 	margin:20px;
 	margin-bottom:0px;
 	padding: 10px;
-	overflow:auto;
-	max-height:550px;
+	overflow: auto;
+	max-height: 550px;
 }
 div.samplescrollbox{
-	display:flex;
-	flex-direction:row;
-	flex-wrap:wrap;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-around;
 }
 div.header3{
 	background-color: rgba(0, 0, 0, 0.6);
 	/* width: 75%; */
-	margin:10px;
-	margin-bottom:0px;
+	margin: 10px;
+	margin-bottom: 0px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	display:flex;
-	flex-direction:row;
-	flex-wrap:wrap;
+	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-around;
 }
@@ -250,4 +250,5 @@ iframe.window{
 	div.sample{ width: 85%; }
 	div.headerwrap{ width: 85%; }
 	div.samplebox{ width: 85%; }
+	div.header3{ margin: 0; }
 }
