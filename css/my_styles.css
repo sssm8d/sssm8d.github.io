@@ -128,7 +128,7 @@ div.header3{
 	margin-bottom: 0px;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	display:flex;
+	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;
@@ -248,7 +248,7 @@ iframe.window{
 	div.contentbox{ width: 85%; }
 	div.contentbox2{ width: 85%; }
 	div.sample{ width: 85%; }
-	div.headerwrap{ width: 85%; }
-	div.samplebox{ width: 85%; }
+	div.headerwrap{ width: 85%; padding: 0; }
+	div.samplebox{ width: 85%; padding: 0; }
 	div.header3{ margin: 0; }
 }
