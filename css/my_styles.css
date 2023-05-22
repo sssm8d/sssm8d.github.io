@@ -134,6 +134,9 @@ div.header3{
 	align-items: center;
 	justify-content: space-around;
 }
+div.headerwrap{
+	width: 75%;
+}
 div.content{
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -245,6 +248,6 @@ iframe.window{
 	div.contentbox{ width: 85%; }
 	div.contentbox2{ width: 85%; }
 	div.sample{ width: 85%; }
-	div.header3{ width: 85%; }
+	div.headerwrap{ width: 85%; }
 	div.samplebox{ width: 85%; }
 }
