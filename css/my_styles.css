@@ -87,11 +87,6 @@ div.header{
 	padding:10px; 
 	margin-bottom:0px;
 }
-@media only screen and (max-device-width: 480px) {
-	div.header{	
-		width: 85%; 
-	}
-}
 div.header2{
 	background-color: rgba(0, 0, 0, 0.6);
 	width: 75%;
@@ -118,9 +113,6 @@ div.samplebox{
 	padding: 10px;
 	overflow:auto;
 	max-height:550px;
-	@media only screen and (max-device-width: 480px) { 
-		width: 85%; 
-	}
 }
 div.samplescrollbox{
 	display:flex;
@@ -141,9 +133,6 @@ div.header3{
 	flex-wrap:wrap;
 	align-items: center;
 	justify-content: space-around;
-	@media only screen and (max-device-width: 480px) { 
-		width: 85%; 
-	}
 }
 div.content{
 	margin-top: 10px;
@@ -180,10 +169,6 @@ div.sample{
 	min-height: 350px;
 	justify-content: center;
 	align-items:center;
-	/* padding:10px; */
-	@media only screen and (max-device-width: 480px) { 
-		width: 85%; 
-	}
 }
 div.contentbox2{
 	display:flex;
@@ -192,9 +177,6 @@ div.contentbox2{
 	/* align-items: center; */
 	justify-content: center;
 	width: 75%;
-	@media only screen and (max-device-width: 480px) { 
-		width: 85%; 
-	}
 }
 div.contentbox{
 	display:flex;
@@ -204,9 +186,6 @@ div.contentbox{
 	justify-content: center;
 	align-content: stretch;
 	width: 75%;
-	@media only screen and (max-device-width: 480px) { 
-		width: 85%; 
-	}
 }
 img.melogo{
 	width: 200%;
@@ -257,5 +236,15 @@ div.logobar{
 	/* background-color: white; */
 }
 iframe.window{
-	width: 80%;
+	width: 75%;
+}
+
+@media only screen and (max-device-width: 480px) {
+	div.header{	width: 85%; }
+	iframe.window{ width: 85%; }
+	div.contentbox{ width: 85%; }
+	div.contentbox2{ width: 85%; }
+	div.sample{ width: 85%; }
+	div.header3{ width: 85%; }
+	div.samplebox{ width: 85%; }
 }
