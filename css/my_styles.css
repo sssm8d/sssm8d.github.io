@@ -240,6 +240,7 @@ div.logobar{
 }
 iframe.window{
 	width: 75%;
+	margin: 10px;
 }
 
 @media only screen and (max-device-width: 480px) {
