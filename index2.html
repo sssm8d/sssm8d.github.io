@@ -1,0 +1,284 @@
+<html>
+<!--if you need to look up a reference: explore https://www.w3schools.com/html/default.asp -->
+<head>
+	<title>Sarah Skinner</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/my_styles.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+	<link rel="icon" href="logos/MeLogo3-purple-circle2.png">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+</head>
+	
+<body id="greg">
+
+	<div class="allthings">
+		<div class="headerwrap">
+		<div id="title" class="header3">
+			<img src="logos/MeLogo3.png" alt="Xinu" id="melogo" style="height: 180px;">
+			<div>
+				<canvas id="me"></canvas>
+				<!-- <h1>Sarah Skinner</h1> -->
+				<h4>(she/her)</h4>
+				<h3 style="padding: 0 10px 0 10px;">That's me. This is what I'm doing right now.</h3>
+				<h3 id="intro"></h3>
+			</div>
+			<div style="height: 180px;width: 180px;"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5a95pig54cb&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;s=180" async="async"></script></div>
+		</div>
+		</div>
+		<script src="js/leon.js"></script>
+		<script>
+			var leon, leon2, canvas, ctx;
+
+			var sw = 360;
+			var sh = 70;
+			const pixelRatio = 2;
+
+			function init() {
+			
+				if (window.screen.width<460){
+					sw = 0.7*window.screen.width;
+					sh = 120;
+				}
+				canvas = document.getElementById('me');
+				ctx = canvas.getContext("2d");
+
+				canvas.width = sw * pixelRatio;
+				canvas.height = sh * pixelRatio;
+				canvas.style.width = sw + 'px';
+				canvas.style.height = sh + 'px';
+				ctx.scale(pixelRatio, pixelRatio);
+
+				if (window.screen.width>=460){
+					leon = new LeonSans({
+						text: 'Sarah Skinner',
+						color: ['white'],
+						size: 60,
+						weight: 300
+					});
+				}else{
+					console.log("not working");
+					console.log(window.screen.width);
+					leon = new LeonSans({
+						text: 'Sarah',
+						color: ['white'],
+						size: 50,
+						weight: 300
+					});
+					leon2 = new LeonSans({
+						text: 'Skinner',
+						color: ['white'],
+						size: 50,
+						weight: 300
+					});
+				}
+				
+				<!-- if (window.screen.width<460){ -->
+					<!-- sw = 200; -->
+					<!-- sh = 50; -->
+				<!-- } -->
+				
+				let i, total = leon.drawing.length;
+				for (i = 0; i < total; i++) {
+					TweenMax.fromTo(leon.drawing[i], 1.6, {
+						value: 0
+					}, {
+						delay: i * 0.05,
+						value: 1,
+						ease: Power4.easeOut
+					});
+				}
+
+				if (window.screen.width<460){
+					let ii, totali = leon.drawing.length;
+					for (ii = 0; ii < totali; ii++) {
+						TweenMax.fromTo(leon2.drawing[ii], 1.6, {
+							value: 0
+						}, {
+							delay: ii * 0.05,
+							value: 1,
+							ease: Power4.easeOut
+						});
+					}
+				}
+				requestAnimationFrame(animate);
+			}
+
+			function animate(t) {
+				requestAnimationFrame(animate);
+
+				ctx.clearRect(0, 0, sw, sh);
+
+				var x = (sw - leon.rect.w) / 2;
+				var y = (sh - leon.rect.h) / 2;
+				if (window.screen.width<460){
+					var y = (sh - leon.rect.h) / 3;
+					var x2 = (sw - leon2.rect.w) / 2;
+					<!-- var y2 = (sh - leon2.rect.h) / 2; -->
+					leon2.position(x2, y+leon.rect.h+5 );
+					leon2.draw(ctx);
+				}
+				leon.position(x, y);
+				leon.draw(ctx);
+			}
+
+			window.onload = () => {
+				init();
+			};
+			document.getElementById('me').addEventListener("mouseover", init);
+			document.getElementById('me').addEventListener("click", init);
+			
+		</script>
+		<div class="header">
+			<hr>
+		</div>
+		
+		<div class="contentbox">
+			<div id="item6" class="content"> 
+				<div class="contentinner">
+				<a href="https://www.cmu.edu/physics/people/graduate-students.html" target="_blank"><img src="logos/cmu-mascot-3-color-on-w.png" alt="CMU" class="logo"></a>
+				<a class="title" href="https://www.cmu.edu/physics/people/graduate-students.html" target="_blank"><h2>Carnegie Mellon University</h2></a>
+				<p id="cmu"></p>
+				<p>I'm on a Physics PhD track due to graduate in 2024 (hopefully).</p>
+				<p>I'm currently studying Lattice QCD for my thesis under the mentorship of Dr. Colin Morningstar.</p>
+				<!-- <p>Check out my <a href="https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=Skinner%2C+Sarah%3B&terms-0-field=author&classification-physics=y&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first" target="_blank">papers</a> and <a href="posters.html" target="_blank">posters</a>.</p> -->
+				<p>Check out my <a href="https://scholar.google.com/citations?user=F7i_vbMAAAAJ&hl=en&inst=3203679203499159833" target="_blank">papers</a> and <a href="posters.html" target="_blank">posters</a>.</p>
+				</div>
+			</div>
+			<div id="item1" class="content"> 
+				<div class="contentinner">
+				<a href="https://github.com/xinucode" target="_blank"><img src="logos/github.png" alt="Github" class="logo"></a>
+				<a  class="title" href="https://github.com/xinucode" target="_blank"><h2>Github</h2></a>
+				<p id="github"></p>
+				<p>See my code contributions to collaborations as well as individual projects.</p>
+				</div>
+			</div>
+		</div>
+		<div class="contentbox">
+			<div class="content">
+				<div class="contentinner">
+				<p style="margin: 0;">A piece of media I connect to:</p>
+				<a id="poorlydrawnlink" href="https://poorlydrawnlines.com/comic/discouraged/" target="_blank"><img id="poorlydrawnimg" src="https://poorlydrawnlines.com/wp-content/uploads/2023/05/discouraged.png" alt="Poorly Drawn Lines" class="logo2"></a>
+				</div>
+			</div>
+		</div>
+		<div class="contentbox">
+			<div id="item3" class="content">
+				<div class="contentinner">
+				<a href="posters/Sarah_Skinner_Resume.pdf" target="_blank"><img src="logos/resume.png" alt="Resume" class="logo"></a>
+				<a  class="title" href="posters/Sarah_Skinner_Resume.pdf" target="_blank"><h2>Resume</h2></a>
+				<!-- <a href="https://www.linkedin.com/in/sarah-skinner-916038156/" target="_blank"><img src="logos/linkedin.png" alt="LinkedIn" class="logo"></a> -->
+				<!-- <a  class="title" href="https://www.linkedin.com/in/sarah-skinner-916038156/" target="_blank"><h2>LinkedIn</h2></a> -->
+				<p id="linkedin">Check out my resume and then offer me a job. &#129488</p>
+				</div>
+			</div>
+			<div id="item2" class="content">
+				<div class="contentinner">
+				<a href="https://www.upwork.com/freelancers/~01a120b13dd5d61cae" target="_blank"><img src="logos/upwork-icon.png" alt="UpWork" class="logo"></a>
+				<a  class="title" href="https://www.upwork.com/freelancers/~01a120b13dd5d61cae" target="_blank"><h2>Upwork</h2></a>
+				<p>Hire me online as a freelancer.</p>
+				<p id="upwork"></p>
+				</div>
+			</div>
+			<div id="item6" class="content">
+				<div class="contentinner">
+				<a href="https://www.linkedin.com/in/the-only-sarah-skinner/" target="_blank"><img src="logos/linkedin.png" alt="LinkedIn" class="logo"></a>
+				<a  class="title" href="https://www.linkedin.com/in/sarah-skinner-916038156/" target="_blank"><h2>LinkedIn</h2></a>
+				<p>Connect with me on LinkedIn.</p>
+				</div>
+			</div>
+			<div id="item5" class="content">
+				<div class="contentinner">
+				<a href="https://www.xinuwrite.com/"><img src="logos/MeLogo3-circle-417077.png" alt="Xinuwrite" class="logo"></a>
+				<a  class="title" href="https://www.xinuwrite.com/"><h2>Xinuwrite</h2></a>
+				<p>Building a writing habit? Check out the site I developed and manage: Xinuwrite, the Daily Writing Challenge.</p>
+				</div>
+			</div>
+			<!-- <div id="item5" class="content"> -->
+				<!-- <a href="xinucode.html"><img src="logos/MeLogo3-purple-circle2.png" alt="xinu-code" class="logo"></a> -->
+				<!-- <a  class="title" href="xinucode.html"><h2>Xinucode</h2></a> -->
+				<!-- <p>Want to learn how to code? Check out my project-based tutoring.</p> -->
+			<!-- </div> -->
+			<div id="item4" class="content">
+				<div class="contentinner">
+				<a href="https://www.instagram.com/rockstar_the_rockstar/" target="_blank"><img src="logos/insta.png" alt="Instagram" class="logo"></a>
+				<a class="title" href="https://www.instagram.com/rockstar_the_rockstar/" target="_blank"><h2>Instagram</h2></a>
+				<p>Look at pictures of my cat Rockstar.</p>
+				<p id="insta"></p>
+				</div>
+			</div>
+		</div>
+		<div class="header">
+			<hr>
+			<div id="tim" class="randomemoji"></div>
+			<a href="#title" class="backtotop" id="backtotop">Back to top</a>
+		</div>
+	
+	</div>
+	
+</body>
+
+<script src="js/lunar_phase.js"></script>
+<script src="js/find_location.js"></script>
+<script src="js/insert_joke.js"></script>
+<script>
+	let links = [
+		"https://poorlydrawnlines.com/comic/discouraged/",
+		"https://poorlydrawnlines.com/comic/you-sure/", 
+		"https://poorlydrawnlines.com/comic/been-thinking/",
+		"https://poorlydrawnlines.com/comic/made-mistakes/",
+		"https://poorlydrawnlines.com/comic/ideas-3/",
+		"https://poorlydrawnlines.com/comic/im-tired/",
+		"https://poorlydrawnlines.com/comic/mistakes-ive-made/",
+		"https://poorlydrawnlines.com/comic/doubt/",
+		"https://poorlydrawnlines.com/comic/more-relaxed/",
+		"https://poorlydrawnlines.com/comic/choose/",
+		"https://poorlydrawnlines.com/comic/too-skeptical/",
+		"https://poorlydrawnlines.com/comic/to-do-list-2/",
+		"https://poorlydrawnlines.com/comic/thinking-about/",
+		"https://poorlydrawnlines.com/comic/know-about/",
+		"https://poorlydrawnlines.com/comic/successful/",
+		"https://poorlydrawnlines.com/comic/8177/",
+		"https://poorlydrawnlines.com/comic/decisions/",
+		"https://poorlydrawnlines.com/comic/think/",
+		"https://poorlydrawnlines.com/comic/dogtor/",
+		"https://poorlydrawnlines.com/comic/one-day/",
+		"https://poorlydrawnlines.com/comic/trying-to-remember/",
+		"https://poorlydrawnlines.com/comic/no-free-time/"
+	];
+	let images = [
+		"https://poorlydrawnlines.com/wp-content/uploads/2023/05/discouraged.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2023/06/sure.png", 
+		"https://poorlydrawnlines.com/wp-content/uploads/2023/05/been-thinking.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2023/02/made_mistakes.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2022/11/ideas2.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2022/11/im_tired.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2022/10/mistakes-ive-made.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2022/08/doubt.png",
+		"https://poorlydrawnlines.com/comic/more-relaxed/",
+		"https://poorlydrawnlines.com/wp-content/uploads/2022/07/more-relaxed-1024x890.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2022/04/too_skeptical.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2022/04/to_do_list.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2022/03/thinking_about.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2021/10/know_about.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2021/10/successful.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2021/08/your_entire_life.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2021/05/decisions.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2021/05/think.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2021/02/dogtor-768x685.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2021/01/One_Day-1024x667.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2020/12/trying_to_remember-1024x913.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2020/11/No_Free_Time-768x681.png"
+	];
+	var randomNumber = Math.floor(Math.random() * links.length);
+	if(document.getElementById("poorlydrawnimg")){
+		document.getElementById("poorlydrawnimg").src = images[randomNumber];
+	}
+	if(document.getElementById("poorlydrawnlink")){
+		document.getElementById("poorlydrawnlink").href = links[randomNumber];
+	}
+	
+</script>
+
+
+</html>

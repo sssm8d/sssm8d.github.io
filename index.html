@@ -1,7 +1,7 @@
 <html>
 <!--if you need to look up a reference: explore https://www.w3schools.com/html/default.asp -->
 <head>
-	<title>Sarah Skinner</title>
+	<title>Sarah Skinner, PhD</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/my_styles.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
@@ -12,33 +12,47 @@
 	
 <body id="greg">
 
-	<div class="allthings">
+	<div class="allthings" id="george">
 		<div class="headerwrap">
+		<!-- <img src="css/bg16.jpg" style="width:calc(100% - 20px); margin-left: 10px;margin-right: 10px;margin-top: 20px;opacity: 0.5;"> -->
 		<div id="title" class="header3">
-			<img src="logos/MeLogo3.png" alt="Xinu" id="melogo" style="height: 180px;">
-			<div>
+			<div style="height: 80px;width: 80px;"><img src="logos/MeLogo3.png" alt="Xinu" id="melogo" style="height: 80px;"></div>
+			<div style="margin-top: 10px;">
 				<canvas id="me"></canvas>
 				<!-- <h1>Sarah Skinner</h1> -->
-				<h4>(she/her)</h4>
-				<h3 style="padding: 0 10px 0 10px;">That's me. This is what I'm doing right now.</h3>
-				<h3 id="intro"></h3>
+				<!-- <h4>(she/her)</h4> -->
+				<!-- <h3 style="padding: 0 10px 0 10px;">That's me. This is what I'm doing right now.</h3> -->
+				<!-- <h3 id="intro"></h3> -->
 			</div>
-			<div style="height: 180px;width: 180px;"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5a95pig54cb&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;s=180" async="async"></script></div>
+			<div style="height: 80px;width: 80px;"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5a95pig54cb&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;s=180" async="async"></script></div>
 		</div>
 		</div>
 		<script src="js/leon.js"></script>
 		<script>
 			var leon, leon2, canvas, ctx;
 
-			var sw = 360;
+			var sw = 670;
 			var sh = 70;
 			const pixelRatio = 2;
+			const max_window = 920;
+			if (greg.clientWidth<max_window){
+				sw = 0.7*greg.clientWidth;
+				sh = 140;
+			}
 
 			function init() {
 			
-				if (window.screen.width<460){
-					sw = 0.7*window.screen.width;
-					sh = 120;
+				const greg = document.getElementById("greg");
+				console.log(greg.clientWidth);
+				
+				<!-- console.log(window.screen.width); -->
+				<!-- const max_window = 920; -->
+				if (greg.clientWidth<max_window){
+					sw = 0.7*greg.clientWidth;
+					sh = 140;
+				} else {
+					sw = 670;
+					sh = 70;
 				}
 				canvas = document.getElementById('me');
 				ctx = canvas.getContext("2d");
@@ -49,34 +63,27 @@
 				canvas.style.height = sh + 'px';
 				ctx.scale(pixelRatio, pixelRatio);
 
-				if (window.screen.width>=460){
+				if (greg.clientWidth>=max_window){
 					leon = new LeonSans({
-						text: 'Sarah Skinner',
+						text: 'Sarah Skinner, PhD',
+						color: ['white'],
+						size: 80,
+						weight: 300
+					});
+				}else{
+					leon = new LeonSans({
+						text: 'Sarah',
 						color: ['white'],
 						size: 60,
 						weight: 300
 					});
-				}else{
-					console.log("not working");
-					console.log(window.screen.width);
-					leon = new LeonSans({
-						text: 'Sarah',
-						color: ['white'],
-						size: 50,
-						weight: 300
-					});
 					leon2 = new LeonSans({
-						text: 'Skinner',
+						text: 'Skinner, PhD',
 						color: ['white'],
-						size: 50,
+						size: 60,
 						weight: 300
 					});
 				}
-				
-				<!-- if (window.screen.width<460){ -->
-					<!-- sw = 200; -->
-					<!-- sh = 50; -->
-				<!-- } -->
 				
 				let i, total = leon.drawing.length;
 				for (i = 0; i < total; i++) {
@@ -89,8 +96,8 @@
 					});
 				}
 
-				if (window.screen.width<460){
-					let ii, totali = leon.drawing.length;
+				if (greg.clientWidth<max_window){
+					let ii, totali = leon2.drawing.length;
 					for (ii = 0; ii < totali; ii++) {
 						TweenMax.fromTo(leon2.drawing[ii], 1.6, {
 							value: 0
@@ -111,15 +118,19 @@
 
 				var x = (sw - leon.rect.w) / 2;
 				var y = (sh - leon.rect.h) / 2;
-				if (window.screen.width<460){
-					var y = (sh - leon.rect.h) / 3;
+				if (greg.clientWidth<max_window){
+					y = 0.0; 
+					<!-- (sh - leon.rect.h) / 8; -->
 					var x2 = (sw - leon2.rect.w) / 2;
 					<!-- var y2 = (sh - leon2.rect.h) / 2; -->
+					leon.position(x, y);
+					leon.draw(ctx);
 					leon2.position(x2, y+leon.rect.h+5 );
 					leon2.draw(ctx);
+				} else {
+					leon.position(x, y);
+					leon.draw(ctx);
 				}
-				leon.position(x, y);
-				leon.draw(ctx);
 			}
 
 			window.onload = () => {
@@ -127,6 +138,7 @@
 			};
 			document.getElementById('me').addEventListener("mouseover", init);
 			document.getElementById('me').addEventListener("click", init);
+			window.addEventListener('resize', init);
 			
 		</script>
 		<div class="header">
@@ -276,6 +288,32 @@
 	}
 	if(document.getElementById("poorlydrawnlink")){
 		document.getElementById("poorlydrawnlink").href = links[randomNumber];
+	}
+	
+	function addweathernote(){
+		const greg = document.getElementById("greg");
+		greg.title = "Have you been outside today? Here is a snapshot of your local weather."; 
+	}
+	function removeweathernote(){
+		const greg = document.getElementById("greg");
+		greg.removeEventListener( "mouseover", addweathernote );
+		greg.title = ""; 
+	}
+	function addgregmouseover(){
+		const greg = document.getElementById("greg");
+		greg.addEventListener( "mouseover", addweathernote );
+	}
+	
+	addgregmouseover();
+	const collection = document.getElementsByClassName("contentbox");
+	for (let i = 0; i<collection.length; i++){
+		collection[i].addEventListener( "mouseover", removeweathernote );
+		collection[i].addEventListener( "mouseout", addgregmouseover );
+	}
+	const collection2 = document.getElementsByClassName("headerwrap");
+	for (let i = 0; i<collection.length; i++){
+		collection2[i].addEventListener( "mouseover", removeweathernote );
+		collection2[i].addEventListener( "mouseout", addgregmouseover );
 	}
 	
 </script>
