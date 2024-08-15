@@ -123,7 +123,7 @@ div.samplescrollbox{
 }
 div.header3{
 	/* background-color: rgba(0, 0, 0, 0.6); */
-	opacity: 0.7;
+	/* opacity: 0.7; */
 	background: rgba(0, 0, 0, .65) url('bg16.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -166,8 +166,8 @@ div.contentinner{
 	flex-direction:column; 
 	height: 100%;
 	justify-content: center;
-	/* align-items: center; */
-	align-content: stretch;
+	align-items: center;
+	/* align-content: stretch; */
 }
 div.sample{
 	background-color: rgba(0, 0, 0, 0.6);
@@ -261,4 +261,31 @@ iframe.window{
 	div.headerwrap{ width: 85%; padding: 0; }
 	div.samplebox{ width: 85%; padding: 0; }
 	div.header3{ margin: 0; }
+}
+.hovertext {
+  position: relative;
+  /* border-bottom: 1px dotted black; */
+}
+
+.hovertext:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  transition: opacity 1s ease-in-out;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+}
+
+.hovertext:hover:before {
+  opacity: 1;
+  visibility: visible;
 }

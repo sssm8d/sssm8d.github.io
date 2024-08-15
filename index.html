@@ -24,7 +24,9 @@
 				<!-- <h3 style="padding: 0 10px 0 10px;">That's me. This is what I'm doing right now.</h3> -->
 				<!-- <h3 id="intro"></h3> -->
 			</div>
-			<div style="height: 80px;width: 80px;"><script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5a95pig54cb&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;s=180" async="async"></script></div>
+			<div style="height: 80px;width: 80px;">
+				<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5a95pig54cb&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;s=80" async="async"></script>
+			</div>
 		</div>
 		</div>
 		<script src="js/leon.js"></script>
@@ -74,13 +76,13 @@
 					leon = new LeonSans({
 						text: 'Sarah',
 						color: ['white'],
-						size: 60,
+						size: 50,
 						weight: 300
 					});
 					leon2 = new LeonSans({
 						text: 'Skinner, PhD',
 						color: ['white'],
-						size: 60,
+						size: 50,
 						weight: 300
 					});
 				}
@@ -145,18 +147,69 @@
 			<hr>
 		</div>
 		
-		<div class="contentbox">
-			<div id="item6" class="content"> 
+		<!-- <div class="headerwrap"> -->
+			<!-- <div style="margin-left: 10px; margin-right: 10px;background-color: rgba(0, 0, 0, 0.6); height=250px; width: calc(100% - 20px); display: flex; justify-content: space-around; align-items: center;"> -->
+				<!-- <div style="width: 250px; height: 165.29px; background-image: url('logos/school_map.png');background-size: cover;background-position: center center;margin: 20px;image-rendering: -webkit-optimize-contrast;image-rendering: pixelated;"></div> -->
+				<!-- <img src="logos/mst2.png" alt="Missouri University of Science and Technology" style="margin:20px;width: 200px;"> -->
+				<!-- <h1>Education</h1> -->
+				<!-- <img src="logos/school_map.png" alt="Map" style="margin:20px;width: 250px;"> -->
+				<!-- <img src="logos/cmu-mascot-3-color-on-w.png" alt="Carnegie Mellon University" style="margin:20px;width: 180px;"> -->
+			<!-- <div style="width: 600px;overflow: hidden;"> -->
+			  <!-- <div style="width: 800px;"> -->
+				<!-- <div id='map-container'></div> -->
+				<!-- <link href="map.css" rel="stylesheet"> -->
+				<!-- <script src="raphael.min.js"></script> -->
+				<!-- <script src="settings.js"></script> -->
+				<!-- <script src="paths.js"></script> -->
+				<!-- <script src="map.js"></script> -->
+				<!-- <script> -->
+				<!-- map_cfg.mapWidth = 0; -->
+				<!-- var map = new FlaMap(map_cfg); -->
+				<!-- map.drawOnDomReady('map-container'); -->
+				<!-- </script> -->
+			  <!-- </div> -->
+			  <!-- </div> -->
+			<!-- </div> -->
+		<!-- </div> -->
+		
+		<!-- <div class="headerwrap"> -->
+			<!-- <div style="height: 250px; overflow: hidden; display: flex; align-items: center; padding-left: 10px; padding-right: 10px;"> -->
+				<!-- <div id="bio" style="background-color: rgba(0, 0, 0, 0.6);height: 250px; display: flex; align-items: center;" width="25%"><p>Click or hover over a cow to learn more about me!</p></div> -->
+				<!-- <img id="cows" src="css/8195-cows-in-a-field-pv.jpg" width="75%"> -->
+			<!-- </div> -->
+		<!-- </div> -->
+		<div class="contentbox" id="ed">
+			<div id="item7" class="content"> 
 				<div class="contentinner">
-				<a href="https://www.cmu.edu/physics/people/graduate-students.html" target="_blank"><img src="logos/cmu-mascot-3-color-on-w.png" alt="CMU" class="logo"></a>
-				<a class="title" href="https://www.cmu.edu/physics/people/graduate-students.html" target="_blank"><h2>Carnegie Mellon University</h2></a>
-				<p id="cmu"></p>
-				<p>I'm on a Physics PhD track due to graduate in 2024 (hopefully).</p>
-				<p>I'm currently studying Lattice QCD for my thesis under the mentorship of Dr. Colin Morningstar.</p>
-				<!-- <p>Check out my <a href="https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=Skinner%2C+Sarah%3B&terms-0-field=author&classification-physics=y&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first" target="_blank">papers</a> and <a href="posters.html" target="_blank">posters</a>.</p> -->
-				<p>Check out my <a href="https://scholar.google.com/citations?user=F7i_vbMAAAAJ&hl=en&inst=3203679203499159833" target="_blank">papers</a> and <a href="posters.html" target="_blank">posters</a>.</p>
+					<h1>Education</h1>
+					<table style="width:100%; text-align: center;">
+						<tr>
+							<th style="width:50%"><img src="logos/mst2.png" alt="MST" class="logo"></th>
+							<th style="width:50%"><img src="logos/cmu-mascot-3-color-on-w.png" alt="CMU" class="logo"></th>
+						</tr>
+						<tr>
+							<td><h2>Missouri University of Science and Technology</h2></td>
+							<td><h2>Carnegie Mellon University</h2></td>
+						</tr>
+						<tr>
+							<td><p>Bachelor of Science</p></td>
+							<td><p>Doctor of Philosophy</p></td>
+						</tr>
+						<tr>
+							<td><p>Major in Physics</p></td>
+							<td><p>Specialization: Particle Physics</p></td>
+						</tr>
+						<tr>
+							<td><p>Minors in Computer Science and Mathematics</p></td>
+							<td><p>Advisor: Dr. Colin Morningstar</p></td>
+						</tr>
+					</table>
 				</div>
 			</div>
+		</div>
+					<!-- <p>Check out my <a href="https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=Skinner%2C+Sarah%3B&terms-0-field=author&classification-physics=y&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first" target="_blank">papers</a> and <a href="posters.html" target="_blank">posters</a>.</p> -->
+				<!-- <p>Check out my <a href="https://scholar.google.com/citations?user=F7i_vbMAAAAJ&hl=en&inst=3203679203499159833" target="_blank">papers</a> and <a href="posters.html" target="_blank">posters</a>.</p> -->	
+		<div class="contentbox">
 			<div id="item1" class="content"> 
 				<div class="contentinner">
 				<a href="https://github.com/xinucode" target="_blank"><img src="logos/github.png" alt="Github" class="logo"></a>
@@ -165,8 +218,6 @@
 				<p>See my code contributions to collaborations as well as individual projects.</p>
 				</div>
 			</div>
-		</div>
-		<div class="contentbox">
 			<div class="content">
 				<div class="contentinner">
 				<p style="margin: 0;">A piece of media I connect to:</p>
@@ -267,8 +318,8 @@
 		"https://poorlydrawnlines.com/wp-content/uploads/2022/11/im_tired.png",
 		"https://poorlydrawnlines.com/wp-content/uploads/2022/10/mistakes-ive-made.png",
 		"https://poorlydrawnlines.com/wp-content/uploads/2022/08/doubt.png",
-		"https://poorlydrawnlines.com/comic/more-relaxed/",
 		"https://poorlydrawnlines.com/wp-content/uploads/2022/07/more-relaxed-1024x890.png",
+		"https://poorlydrawnlines.com/wp-content/uploads/2022/05/choose.png",
 		"https://poorlydrawnlines.com/wp-content/uploads/2022/04/too_skeptical.png",
 		"https://poorlydrawnlines.com/wp-content/uploads/2022/04/to_do_list.png",
 		"https://poorlydrawnlines.com/wp-content/uploads/2022/03/thinking_about.png",
@@ -311,10 +362,28 @@
 		collection[i].addEventListener( "mouseout", addgregmouseover );
 	}
 	const collection2 = document.getElementsByClassName("headerwrap");
-	for (let i = 0; i<collection.length; i++){
+	for (let i = 0; i<collection2.length; i++){
 		collection2[i].addEventListener( "mouseover", removeweathernote );
 		collection2[i].addEventListener( "mouseout", addgregmouseover );
 	}
+	
+	function replaceeduction(){
+		let inline_text = '<div id="item7" class="content"><div class="contentinner"><img src="logos/mst2.png" alt="MST" class="logo"><h2>Missouri University of Science and Technology</h2><p>Bachelor of Science</p><p>Major in Physics</p><p>Minors in Computer Science and Mathematics</p></div></div><div id="item6" class="content"> <div class="contentinner"><img src="logos/cmu-mascot-3-color-on-w.png" alt="CMU" class="logo"><h2>Carnegie Mellon University</h2><p>Doctor of Philosophy</p><p>Specialization: Particle Physics</p><p>Advisor: Dr. Colin Morningstar</p></div></div></div>';
+		let table_text = '<div id="item7" class="content"><div class="contentinner"><h1>Education</h1><table style="width:100%; text-align: center;"><tr><th style="width:50%"><img src="logos/mst2.png" alt="MST" class="logo"></th><th style="width:50%"><img src="logos/cmu-mascot-3-color-on-w.png" alt="CMU" class="logo"></th></tr><tr><td><h2>Missouri University of Science and Technology</h2></td><td><h2>Carnegie Mellon University</h2></td></tr><tr><td><p>Bachelor of Science</p></td><td><p>Doctor of Philosophy</p></td></tr><tr><td><p>Major in Physics</p></td><td><p>Specialization: Particle Physics</p></td></tr><tr><td><p>Minors in Computer Science and Mathematics</p></td><td><p>Advisor: Dr. Colin Morningstar</p></td></tr></table></div></div>';
+		const greg = document.getElementById("greg");
+		const ed = document.getElementById("ed");
+		const max_width = 750;
+		if(greg.clientWidth>max_width){
+			ed.innerHTML = table_text;
+		} else {
+			ed.innerHTML = inline_text;
+		}
+		console.log(ed.innerHTML);
+	}
+	console.log('here');
+	replaceeduction();
+	window.addEventListener('resize', replaceeduction);
+	
 	
 </script>
 
