@@ -143,6 +143,20 @@ div.header3{
 	align-items: center;
 	justify-content: space-around;
 }
+div.header4{
+	background-color: rgba(0, 0, 0, 0.6);
+	
+	/* width: 75%; */
+	margin: 10px;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	padding: 40px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
 div.headerwrap{
 	width: 75%;
 }
@@ -252,6 +266,18 @@ iframe.window{
 	margin: 10px;
 }
 
+div.ansyspic{
+	width: 60%;
+}
+div.ansysdet{
+	width: 40%;
+}
+a.ansyslink{
+	/* font-variant: small-caps; */
+	text-decoration: none;
+	color: #F4C400;
+}
+
 @media only screen and (max-device-width: 480px) {
 	div.header{	width: 85%; }
 	iframe.window{ width: 85%; }
@@ -261,6 +287,8 @@ iframe.window{
 	div.headerwrap{ width: 85%; padding: 0; }
 	div.samplebox{ width: 85%; padding: 0; }
 	div.header3{ margin: 0; }
+	div.ansyspic{ width: 100%; }
+	div.ansysdet{ width: 100%;}
 }
 .hovertext {
   position: relative;
