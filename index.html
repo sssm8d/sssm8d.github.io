@@ -16,7 +16,7 @@
 		<div class="headerwrap">
 		<!-- <img src="css/bg16.jpg" style="width:calc(100% - 20px); margin-left: 10px;margin-right: 10px;margin-top: 20px;opacity: 0.5;"> -->
 		<div id="title" class="header3">
-			<div style="height: 80px;width: 80px;"><img src="logos/MeLogo3.png" alt="Xinu" id="melogo" style="height: 80px;"></div>
+			<div style="height: 90px;width: 90px;"><img src="logos/MeLogo3.png" alt="Xinu" id="melogo" style="height: 90px;"></div>
 			<div style="margin-top: 10px;">
 				<canvas id="me"></canvas>
 				<!-- <h1>Sarah Skinner</h1> -->
@@ -24,7 +24,7 @@
 				<!-- <h3 style="padding: 0 10px 0 10px;">That's me. This is what I'm doing right now.</h3> -->
 				<!-- <h3 id="intro"></h3> -->
 			</div>
-			<div style="height: 80px;width: 80px;">
+			<div style="height: 90px;width: 90px;">
 				<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5a95pig54cb&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;l=33" async="async"></script>
 			</div>
 		</div>
@@ -186,7 +186,7 @@
 				<!-- <h1>Ansys</h1> -->
 				<div class="ansysdet" >
 					<h1>Find me at <a class="ansyslink" href="https://www.ansys.com/">Ansys</a>!</h1>
-					<p>I was hired on as an R&D Engineer at Ansys in August 2024 where I can continue my passion of developing scientific simulations.</p>
+					<p>I was hired on as an R&D Engineer at Ansys in August 2024 where I continue my passion of developing scientific simulations.</p>
 				</div>
 			</div>
 		</div>
@@ -380,8 +380,8 @@
 	}
 	
 	function replaceeduction(){
-		let inline_text = '<div id="item7" class="content"><div class="contentinner"><img src="logos/mst2.png" alt="MST" class="logo"><h2>Missouri University of Science and Technology</h2><p>Bachelor of Science</p><p>Major in Physics</p><p>Minors in Computer Science and Mathematics</p></div></div><div id="item6" class="content"> <div class="contentinner"><img src="logos/cmu-mascot-3-color-on-w.png" alt="CMU" class="logo"><h2>Carnegie Mellon University</h2><p>Doctor of Philosophy</p><p>Specialization: Particle Physics</p><p>Advisor: Dr. Colin Morningstar</p></div></div></div>';
-		let table_text = '<div id="item7" class="content"><div class="contentinner"><h1>Education</h1><table style="width:100%; text-align: center;"><tr><th style="width:50%"><img src="logos/mst2.png" alt="MST" class="logo"></th><th style="width:50%"><img src="logos/cmu-mascot-3-color-on-w.png" alt="CMU" class="logo"></th></tr><tr><td><h2>Missouri University of Science and Technology</h2></td><td><h2>Carnegie Mellon University</h2></td></tr><tr><td><p>Bachelor of Science</p></td><td><p>Doctor of Philosophy</p></td></tr><tr><td><p>Major in Physics</p></td><td><p>Specialization: Particle Physics</p></td></tr><tr><td><p>Minors in Computer Science and Mathematics</p></td><td><p>Advisor: Dr. Colin Morningstar</p></td></tr></table></div></div>';
+		let inline_text = '<div id="item7" class="content"><div class="contentinner"><h1>Education</h1><hr width="100%"><img src="logos/mst2.png" alt="MST" class="logo"><h2>Missouri University of Science and Technology</h2><p>Bachelor of Science</p><p>Major in Physics</p><p>Minors in Computer Science and Mathematics</p><hr width="100%"><img src="logos/cmu-mascot-3-color-on-w.png" alt="CMU" class="logo"><h2>Carnegie Mellon University</h2><p>Doctor of Philosophy</p><p>Specialization: Particle Physics</p><p>Advisor: Dr. Colin Morningstar</p></div></div></div>';
+		let table_text = '<div id="item7" class="content"><div class="contentinner"><h1>Education</h1><hr width="100%"><table style="width:100%; text-align: center;"><tr><th style="width:50%"><img src="logos/mst2.png" alt="MST" class="logo"></th><th style="width:50%"><img src="logos/cmu-mascot-3-color-on-w.png" alt="CMU" class="logo"></th></tr><tr><td><h2>Missouri University of Science and Technology</h2></td><td><h2>Carnegie Mellon University</h2></td></tr><tr><td><p>Bachelor of Science</p></td><td><p>Doctor of Philosophy</p></td></tr><tr><td><p>Major in Physics</p></td><td><p>Specialization: Particle Physics</p></td></tr><tr><td><p>Minors in Computer Science and Mathematics</p></td><td><p>Advisor: Dr. Colin Morningstar</p></td></tr></table></div></div>';
 		const greg = document.getElementById("greg");
 		const ed = document.getElementById("ed");
 		const max_width = 750;
@@ -395,6 +395,7 @@
 	function reformatAnsysTile(){
 		const greg = document.getElementById("greg");
 		const ed = document.getElementById("ed");
+		const item7 = document.getElementById("item7");
 		const collection = document.getElementsByClassName("ansyspic");
 		const collection2 = document.getElementsByClassName("ansysdet");
 		const max_width = 1000;
@@ -405,6 +406,7 @@
 			for (let i = 0; i<collection2.length; i++){
 				collection2[i].style.width="40%";
 			}
+			item7.style.padding="40px";
 		} else if( (greg.clientWidth>max_width) && (greg.clientWidth<1200)) {
 			for (let i = 0; i<collection.length; i++){
 				collection[i].style.width="50%";
@@ -412,6 +414,7 @@
 			for (let i = 0; i<collection2.length; i++){
 				collection2[i].style.width="50%";
 			}
+			item7.style.padding="20px";
 		} else {
 			for (let i = 0; i<collection.length; i++){
 				collection[i].style.width="100%";
@@ -419,6 +422,7 @@
 			for (let i = 0; i<collection2.length; i++){
 				collection2[i].style.width="100%";
 			}
+			item7.style.padding="10px";
 		}
 	}
 	console.log('here');
